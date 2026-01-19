@@ -25,7 +25,7 @@ const promptSchema = new mongoose.Schema({
     required: false
   },
   likes: {
-    type: number,
+    type: Number,
     required: true
   }
 })
