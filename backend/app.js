@@ -1,11 +1,11 @@
 const express = require('express')
+const app = express()
 const mongoose = require('mongoose')
 const config = require('./utils/config')
 const logger = require('./utils/logger')
 const middleware = require('./utils/middleware')
 const promptsRouter = require('./controllers/prompts')
 const cors = require('cors')
-const app = express()
 
 logger.info('connecting to', config.MONGODB_URI)
 
