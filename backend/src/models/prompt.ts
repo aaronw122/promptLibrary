@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
 const promptSchema = new mongoose.Schema({
   title: {
@@ -11,7 +11,7 @@ const promptSchema = new mongoose.Schema({
     required: true,
     minlength: 5
   },
-  username: {
+  author: {
     type: String,
     required: true,
     minlength: 5
@@ -27,15 +27,19 @@ const promptSchema = new mongoose.Schema({
   likes: {
     type: Number,
     required: false
+  },
+  createdAt: {
+    type: String,
+    required: true
   }
 })
 
 promptSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
+  transform: (document, returnedObject: any) => {
     returnedObject.id = returnedObject._id.toString()
     delete returnedObject._id
     delete returnedObject.__v
   }
 })
 
-module.exports = mongoose.model('Prompt', promptSchema)
+export default mongoose.model('Prompt', promptSchema)
