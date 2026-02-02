@@ -1,11 +1,13 @@
-const express = require('express')
+import express from 'express'
 const app = express()
-const mongoose = require('mongoose')
-const config = require('./utils/config')
-const logger = require('./utils/logger')
-const middleware = require('./utils/middleware')
-const promptsRouter = require('./controllers/prompts')
-const cors = require('cors')
+import mongoose from 'mongoose'
+import * as config from './utils/config'
+import logger from './utils/logger'
+import * as middleware from './utils/middleware'
+import promptsRouter from './controllers/prompts'
+import cors from 'cors'
+
+
 
 logger.info('connecting to', config.MONGODB_URI)
 

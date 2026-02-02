@@ -1,7 +1,9 @@
-export const info = (...params: unknown[]) => {
+const info = (...params: unknown[]) => {
   console.log(...params)
 }
 
-export const error = (...params: unknown[]) => {
+const error = (...params: unknown[]) => {
   console.error(...params)
 }
+
+export default {error, info}

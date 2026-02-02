@@ -18,7 +18,7 @@ promptsRouter.get('/', async (request, response) => {
 })
 
 promptsRouter.post('/', async (request, response, next) => {
-  const { title, content, author, tags, source, likes} = request.body
+  const { title, content, author, tags, source, likes, createdAt} = request.body
 
 
   const prompt = new Prompt({
@@ -28,6 +28,7 @@ promptsRouter.post('/', async (request, response, next) => {
     tags: tags,
     source: source,
     likes: likes || 0,
+    createdAt: new Date()
   })
 
   const savedPrompt = await prompt.save()
